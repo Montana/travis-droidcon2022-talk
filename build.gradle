@@ -22,3 +22,10 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+// This enables long timeouts if needed. (by Montana Mendy)
+
+adbOptions {
+    timeOutInMs 20 * 60 * 1000  // 20 minutes
+    installOptions "-d","-t"
+}
