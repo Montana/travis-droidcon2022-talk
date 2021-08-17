@@ -18,8 +18,8 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - sys-img-armeabi-v7a-android-22
- 
+    - sys-img-arm64-v8a-android-24
+    
 before_install:
   - chmod +x gradlew
   - yes | sdkmanager "platforms;android-30"
