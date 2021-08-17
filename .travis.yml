@@ -1,6 +1,6 @@
 ---
 language: android
-jdk: oraclejdk8
+jdk: oraclejdk9
 dist: trusty
 
 android:
@@ -27,9 +27,8 @@ before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
   - emulator -avd test -no-audio -no-window &
   - android-wait-for-emulator
+  - bash android-wait-for-emulator.sh
   - adb shell input keyevent 82 &
-  - chmod u+x ./android-wait-for-emulator.sh
-  - mkdir -p ~/.gradle && echo "org.gradle.daemon=false" >> ~/.gradle/gradle.properties
   
 script:
   - ./gradlew clean build
