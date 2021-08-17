@@ -1,7 +1,6 @@
 ---
 language: android
 jdk: oraclejdk8
-dist: xenial
 
 android:
   licenses:
@@ -18,14 +17,14 @@ android:
     - extra-google-google_play_services
     - extra-google-m2repository
     - extra-android-m2repository
-    - sys-img-arm64-v8a-android-24
-    
+    - sys-img-armeabi-v7a-android-22
+ 
 before_install:
   - chmod +x gradlew
   - yes | sdkmanager "platforms;android-30"
 
 before_script:
-  - echo no | android create avd --force -n test -t android-22 --abi arm64-v8a-android-24
+  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
   - emulator -avd test -no-audio -no-window &
   - bash android-wait-for-emulator
   - adb shell input keyevent 82 &
