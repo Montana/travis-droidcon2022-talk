@@ -1,7 +1,7 @@
 ---
 language: android
 jdk: oraclejdk8
-dist: trusty
+dist: xenial
 
 android:
   licenses:
@@ -12,6 +12,7 @@ android:
   components:
     - tools
     - build-tools-30.0.2
+    - tools
     - android-30
     - android-22
     - extra-google-google_play_services
@@ -22,10 +23,6 @@ android:
 before_install:
   - chmod +x gradlew
   - yes | sdkmanager "platforms;android-30"
-  - curl "${GRAVIS}.install-jdk-travis.sh" --output ~/.install-jdk-travis.sh
-  - export TARGET_JDK="${JDK}"
-  - JDK="1.8"
-  - source ~/.install-jdk-travis.sh
 
 before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
