@@ -1,7 +1,7 @@
 sudo: required
 language: android
 jdk: oraclejdk8
-dist: focal
+dist: trusty
 
 android:
   licenses:
@@ -30,6 +30,7 @@ before_script:
   - adb shell input keyevent 82 &
 
 script:
+  - ./gradlew clean build
   - ./gradlew test
   - ./gradlew build check
 
