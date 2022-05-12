@@ -1,7 +1,7 @@
-sudo: required
+---
 language: android
 jdk: oraclejdk8
-dist: trusty
+dist: xenial
 
 android:
   licenses:
@@ -12,6 +12,7 @@ android:
   components:
     - tools
     - build-tools-30.0.2
+    - tools
     - android-30
     - android-22
     - extra-google-google_play_services
@@ -26,9 +27,9 @@ before_install:
 before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
   - emulator -avd test -no-audio -no-window &
-  - android-wait-for-emulator
+  - bash android-wait-for-emulator
   - adb shell input keyevent 82 &
-
+  
 script:
   - ./gradlew clean build
   - ./gradlew test
