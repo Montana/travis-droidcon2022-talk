@@ -1,4 +1,5 @@
 ---
+sudo: required
 language: android
 jdk: oraclejdk8
 dist: trusty
@@ -12,7 +13,6 @@ android:
   components:
     - tools
     - build-tools-30.0.2
-    - tools
     - android-30
     - android-22
     - extra-google-google_play_services
