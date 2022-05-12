@@ -1,7 +1,7 @@
 ---
 language: android
 jdk: oraclejdk8
-dist: xenial
+dist: trusty
 
 android:
   licenses:
