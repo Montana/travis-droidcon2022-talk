@@ -33,6 +33,7 @@ before_script:
 script:
   - ./gradlew assembleDebug 
   - ./gradlew connectedCheck
+  - echo "Thank You Droidcon 2022! - Montana Mendy from Travis CI!"
  
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
