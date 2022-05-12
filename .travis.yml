@@ -8,16 +8,15 @@ android:
   licenses:
     - android-sdk-license-.+
 
-   components:
+components:
     - tools
-    - build-tools-30.0.2
-    - android-30
-    - android-22
-    - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - sys-img-armeabi-v7a-android-22
- 
+    - platform-tools
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - android-$ANDROID_API_LEVEL
+    - android-$EMU_API_LEVEL
+    - extra-android-support
+    - sys-img-$EMU_ABI-google_apis-$EMU_API_LEVEL
+    
 before_install:
   - chmod +x gradlew
   - yes | sdkmanager "platforms;android-30"
