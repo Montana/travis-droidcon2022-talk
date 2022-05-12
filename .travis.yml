@@ -31,9 +31,9 @@ before_script:
   - adb shell input keyevent 82 &
   
 script:
-  - ./gradlew clean build
-  - ./gradlew test
-  - ./gradlew build check
+  - ./gradlew clean build --stacktrace
+  - ./gradlew test --stacktrace
+  - ./gradlew build check --stacktrace
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
