@@ -6,9 +6,8 @@ dist: trusty
 
 android:
   licenses:
-    - 'android-sdk-preview-license-.+'
-    - 'android-sdk-license-.+'
-    - 'google-gdk-license-.+'
+    - android-sdk-license-.+
+
  
   components:
     - tools
@@ -23,6 +22,8 @@ android:
 before_install:
   - chmod +x gradlew
   - yes | sdkmanager "platforms;android-30"
+  - yes | sdkmanager "platforms;android-$ANDROID_API_LEVEL"
+  - yes | sdkmanager "platforms;android-$EMU_API_LEVEL"
 
 before_script:
   - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
