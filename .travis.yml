@@ -9,7 +9,7 @@ android:
   licenses:
      - '.+'
  
-  components:
+ components:
     - tools
     - build-tools-30.0.2
     - android-30
@@ -18,6 +18,11 @@ android:
     - extra-google-m2repository
     - extra-android-m2repository
     - sys-img-armeabi-v7a-android-22
+    
+install:
+    - travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder
+    - sudo adduser $USER libvirt
+    - sudo adduser $USER kvm
  
 before_install:
     - chmod +x gradlew
