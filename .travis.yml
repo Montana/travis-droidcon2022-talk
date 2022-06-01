@@ -8,6 +8,16 @@ group: edge
 android:
   licenses:
      - '.+'
+
+addons:
+  apt:
+    packages:
+      - bridge-utils
+      - libpulse0
+      - libvirt-bin
+      - qemu-kvm
+      - virtinst
+      - ubuntu-vm-builder
  
  components:
     - tools
@@ -22,14 +32,6 @@ android:
 before_install:
     - chmod +x gradlew
     - yes | sdkmanager "platforms;android-30"
-    - sudo apt-get -y --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder > /dev/null
-    - java -version
-
-  # Set up KVM
-  - sudo apt-get -y --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder > /dev/null
-  # add travis user to groups
-  - sudo adduser $USER libvirt
-  - sudo adduser $USER kvm
 
 before_script:
     - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
