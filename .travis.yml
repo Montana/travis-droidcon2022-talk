@@ -1,6 +1,6 @@
 language: android
 jdk: oraclejdk8
-dist: trusty
+dist: jammy
 vm:
   size: 2x-large
 group: edge
