@@ -1,8 +1,9 @@
 ---
-sudo: required
 language: android
 jdk: oraclejdk8
-dist: trusty
+dist: jammy
+virt: vm
+group: edge
 
 android:
   licenses:
