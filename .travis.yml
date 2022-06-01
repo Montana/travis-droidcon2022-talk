@@ -10,15 +10,14 @@ android:
   licenses:
      - '.+'
  
+android:
   components:
     - tools
-    - build-tools-30.0.2
-    - android-30
-    - android-22
+    - build-tools-$ANDROID_BUILD_TOOLS_VERSION
+    - $ANDROID_TARGET
     - extra-google-google_play_services
-    - extra-google-m2repository
-    - extra-android-m2repository
-    - sys-img-armeabi-v7a-android-22
+    - extra-android-support
+    - extra
  
 before_install:
     - chmod +x gradlew
