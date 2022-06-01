@@ -20,9 +20,6 @@ android:
     - sys-img-armeabi-v7a-android-22
     
 install:
-    - sdkmanager "platforms;android-$EMULATOR_API"
-    - sdkmanager "emulator"
-    - sdkmanager "system-images;android-$EMULATOR_API;$EMULATOR_ABI"
     - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder
     - sudo adduser $USER libvirt
     - sudo adduser $USER kvm
