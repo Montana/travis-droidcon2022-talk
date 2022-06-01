@@ -18,7 +18,15 @@ android:
     - extra-google-m2repository
     - extra-android-m2repository
     - sys-img-armeabi-v7a-android-22
- 
+    
+install:
+    - echo y | travis_retry sdkmanager --no_https "platforms;android-$API" >/dev/null # We need the API of the emulator we will run
+    - echo y | travis_retry sdkmanager --no_https "emulator" >/dev/null
+    - echo y | travis_retry sdkmanager --no_https "system-images;android-$API;$EMU_FLAVOR;$ABI" >/dev/null # install our emulator
+    - travis_retry sudo -E apt-get -yq --no-install-suggests --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder
+    - sudo adduser $USER libvirt
+    - sudo adduser $USER kvm
+
 before_install:
     - chmod +x gradlew
     - yes | sdkmanager "platforms;android-30"
