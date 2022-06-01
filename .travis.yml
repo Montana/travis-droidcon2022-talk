@@ -2,8 +2,6 @@
 language: android
 jdk: oraclejdk8
 dist: jammy
-virt: vm
-group: edge
 
 android:
   licenses:
