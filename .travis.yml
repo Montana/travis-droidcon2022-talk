@@ -1,23 +1,25 @@
+---
 language: android
 jdk: oraclejdk8
 dist: jammy
 vm:
   size: 2x-large
 group: edge
-
-android:
-  licenses:
-     - '.+'
+dist: jammy
 
 addons:
   apt:
     packages:
-      - bridge-utils
-      - libpulse0
-      - libvirt-bin
-      - qemu-kvm
-      - virtinst
-      - ubuntu-vm-builder
+     - bridge-utils
+     - libpulse0
+     - libvirt-bin
+     - qemu-kvm
+     - virtinst
+     - ubuntu-vm-builder
+
+android:
+  licenses:
+     - '.+'
  
  components:
     - tools
