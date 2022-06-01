@@ -31,6 +31,9 @@ before_script:
     - emulator -avd test -no-audio -no-window &
     - bash android-wait-for-emulator
     - adb shell input keyevent 82 &
+    - sudo apt-get -y --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder > /dev/null
+    - sudo adduser $USER libvirt
+    - sudo adduser $USER kvm
     
 script:
     - ./gradlew assembleDebug 
