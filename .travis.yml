@@ -1,6 +1,6 @@
 language: android
 jdk: oraclejdk8
-dist: jammy
+dist: bionic
 vm:
   size: 2x-large
 group: edge
@@ -22,7 +22,6 @@ android:
 install:
     - sudo -E apt-get -yq --no-install-suggests --no-install-recommends install bridge-utils libpulse0 libvirt-bin qemu-kvm virtinst ubuntu-vm-builder
     - sudo adduser $USER libvirt
-    - sudo adduser $USER kvm
  
 before_install:
     - chmod +x gradlew
