@@ -7,16 +7,6 @@ vm:
 group: edge
 dist: jammy
 
-addons:
-  apt:
-    packages:
-     - bridge-utils
-     - libpulse0
-     - libvirt-bin
-     - qemu-kvm
-     - virtinst
-     - ubuntu-vm-builder
-
 android:
   licenses:
      - '.+'
